@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\PiotrK\source\repos\WebApplication8\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\Bin\Microsoft.AspNet.WebHooks.Custom.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\Bin\Microsoft.AspNet.WebHooks.Custom.SqlStorage.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\PiotrK\source\repos\WebApplication8\packages\Microsoft.AspNet.WebHooks.Custom.Api.1.2.1\lib\net45\Microsoft.AspNet.WebHooks.Custom.Api.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
