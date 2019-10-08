@@ -10,18 +10,18 @@
 <form onsubmit="return subscribe()">
 	Subscribe to all events 1 <input type="submit" value="submit">
 </form>
-
-<form onsubmit="return subscribe2()">
-	Subscribe to all events 2 <input type="submit" value="submit">
-</form>
 <form onsubmit="return unsubscribe()">
 	Unsubscribe from all events <input type="submit" value="submit">
 </form>
 <form onsubmit="return notifymvc()">
-	Trigger notification through MVC controller <input type="submit" value="submit">
+	Trigger notification through MVC controller event1 <input type="submit" value="submit">
 </form>
 <form onsubmit="return notifyapi()">
-	Trigger notification through Web API controller <input type="submit" value="submit">
+	Trigger notification through Web API controller event2 <input type="submit" value="submit">
+</form>
+
+<form onsubmit="return load()">
+	Get list of events to subscribe <input type="submit" value="submit">
 </form>
 <div class="row">
 	<div class="col-md-4">
@@ -48,44 +48,38 @@
 	function subscribe() {
 		$.ajax({
 			type: 'POST',
-			url: '/api/webhooks/register',
+			url: '/api/webhooks/registrations',
 			data: JSON.stringify({
-				WebHookUri: 'http://localhost:63090/api/webhooks/incoming/scion',
+				WebHookUri: 'https://localhost:44354/api/webhooks/incoming/scion',
 					Secret: '12345678901234567890123456789012',
 				Description: 'My first WebHook!'
 			}),
 			contentType: 'application/json; charset=utf-8',
 		dataType: 'json',
-		success: function(data, status) { alert(data.Message ? data.Message : status); },
-		error: function (errMsg) { alert(errMsg.responseJSON.Message); }
+		success: function(data, status) { console.log(data ? data : status); },
+		error: function (errMsg) { console.log(errMsg.responseJSON.Message); }
+	});
+	return false;
+	}	
+	
+	function load() {
+		$.ajax({
+			type: 'GET',
+			url: '/api/webhooks/filters',			
+			contentType: 'application/json; charset=utf-8',
+		dataType: 'json',
+		success: function(data, status) { console.log(data ? data : status); },
+			error: function (errMsg) { console.log(errMsg.responseJSON.Message); }
 	});
 	return false;
 	}
 
-	function subscribe2() {
-		$.ajax({
-			type: 'POST',
-			url: '/api/webhooks/register',
-			data: JSON.stringify({
-				WebHookUri: 'http://localhost:63090/api/webhooks/incoming/scion',
-				Secret: '12345678901234567890123456789012',
-				User: 'user2',
-				Description: 'My first WebHook!'
-			}),
-			contentType: 'application/json; charset=utf-8',
-			dataType: 'json',
-			success: function (data, status) { alert(data.Message ? data.Message : status); },
-			error: function (errMsg) { alert(errMsg.responseJSON.Message); }
-		});
-		return false;
-	}
-
 	function unsubscribe() {
 		$.ajax({
-			url: '/api/webhooks/register',
+			url: '/api/webhooks/registrations',
 			type: 'DELETE',
-			success: function (data, status) { alert(data.Message ? data.Message : status); },
-			error: function (errMsg) { alert(errMsg.responseJSON.Message); }
+			success: function (data, status) { console.log(data ? data : status); },
+			error: function (errMsg) { console.log(errMsg.responseJSON.Message); }
 	});
 	return false;
 }
@@ -93,14 +87,14 @@
 	function notifymvc() {
 		$.post('/notify/submit',
 			{},
-			function (data, status) { alert('Data: ' + data + '\nStatus: ' + status); });
+			function (data, status) { console.log('Data: ' + data + '\nStatus: ' + status); });
 		return false;
 	}
 
 	function notifyapi() {
 		$.post('/api/notifyapi',
 			{},
-			function (data, status) { alert('Data: ' + data + '\nStatus: ' + status); });
+			function (data, status) { console.log('Data: ' + data + '\nStatus: ' + status); });
 		return false;
 	}
 </script>

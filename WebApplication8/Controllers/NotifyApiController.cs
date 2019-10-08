@@ -15,18 +15,9 @@ namespace WebApplication8.Controllers
 	[System.Web.Http.Authorize]
 	public class NotifyApiController : ApiController
     {
-	    public async Task Post()
+	    public async Task<int> Post()
 	    {
-		    var manager = CustomServices.GetFilterManager(new List<IWebHookFilterProvider>() { new MyFilterProvider()});
-
-		    var filters = await manager.GetAllWebHookFiltersAsync();
-
-		    var first = filters["event2"];
-
-			DependencyResolver.SetResolver();
-
-			// Create an event with 'event2' and additional data
-			await this.NotifyAsync(first.Name, new { P1 = "p1" });
+		    return await this.NotifyAllAsync("event2", new {P1 = "p1"});
 	    }
-	}
+    }
 }

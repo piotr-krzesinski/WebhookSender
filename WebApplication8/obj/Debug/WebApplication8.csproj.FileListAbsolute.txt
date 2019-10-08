@@ -161,3 +161,11 @@ C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Microsoft.AspNe
 C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Microsoft.AspNet.WebHooks.Custom.Mvc.xml
 C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Microsoft.AspNet.WebHooks.Receivers.xml
 C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Microsoft.AspNet.WebHooks.Receivers.Custom.xml
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.dll
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.Integration.Mvc.dll
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.Integration.WebApi.dll
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.pdb
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.xml
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.Integration.Mvc.xml
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.Integration.WebApi.pdb
+C:\Users\PiotrK\source\repos\WebApplication8\WebApplication8\bin\Autofac.Integration.WebApi.xml

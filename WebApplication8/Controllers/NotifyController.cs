@@ -9,7 +9,6 @@ using Microsoft.AspNet.WebHooks;
 
 namespace WebApplication8.Controllers
 {
-	[Authorize]
 	public class NotifyController : Controller
     {
 
@@ -22,10 +21,16 @@ namespace WebApplication8.Controllers
         [HttpPost]
         public async Task<ActionResult> Submit()
         {
-	        // Create an event with action 'event1' and additional data
-	        await this.NotifyAsync("event1", new { P1 = "p1" });
+	        await this.NotifyAllAsync("event1", new {P1 = "p1"}, Predicate);
 
 	        return new EmptyResult();
         }
-	}
+
+        private string[] arr = new[] {"piotrk@dip.co.uk", "tomekh@dip.co.uk"};
+
+        private bool Predicate(WebHook arg1, string user)
+        {
+	        return arr.Contains(user);
+        }
+    }
 }
